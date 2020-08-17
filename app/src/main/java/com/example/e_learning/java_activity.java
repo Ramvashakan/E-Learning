@@ -10,6 +10,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.webkit.WebView;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -18,6 +19,7 @@ public class java_activity extends AppCompatActivity {
     Toolbar toolbar;
     DrawerLayout drawerLayout1;
     NavigationView navigationView;
+    WebView mywebview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +30,18 @@ public class java_activity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         drawerLayout1 = findViewById(R.id.drawer_layout2);
 
+
+
+        mywebview =(WebView) findViewById(R.id.webview);
+
+        mywebview.loadUrl("https://www.w3schools.com/java/default.asp");
+
+
+        setSupportActionBar(toolbar);
+
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout1, toolbar,
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+
 
         drawerLayout1.addDrawerListener(toggle);
         toggle.syncState();
